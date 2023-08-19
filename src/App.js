@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState(false);
@@ -37,20 +37,20 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router basename="/TextUtils">
         <Navbar title="TextUtils" toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Routes>
+          <Routes>
             <Route exact path="/about" element={
               <About />
             } />
-            <Route exact path="/" element={ */}
+            <Route exact path="/" element={
               <TextForm showAlert={showAlert} />
-            {/* } />
-          </Routes> */}
+            } />
+          </Routes>
         </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }
