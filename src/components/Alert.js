@@ -8,14 +8,16 @@ function Alert(props) {
   }
 
   return (
-    props.alert && <div className="container-sm my-1">
-      <div className={`alert alert-${props.alert.level ? props.alert.level : "primary"} alert-dismissible fade show`} role="alert">
-        <strong>{capitalize(
-          props.alert.type ? props.alert.type : (
-            props.alert.level ? props.alert.level : "Info"
-          )
-        )}</strong>: {props.alert.msg}
-      </div>
+    <div style={{height:"70px"}}>
+      {props.alert && <div className="container-sm py-1">
+        <div className={`alert center alert-${props.alert.level ? props.alert.level : "primary"} alert-dismissible fade show`} role="alert">
+          <strong>{capitalize(
+            props.alert.type ? props.alert.type : (
+              props.alert.level ? props.alert.level : "Info"
+            )
+          )}</strong>: {props.alert.msg}
+        </div>
+      </div>}
     </div>
   )
 }
