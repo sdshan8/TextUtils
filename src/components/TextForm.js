@@ -86,22 +86,22 @@ function TextForm(props) {
         <div className="mb-3">
           <textarea className="form-control" id="textBox" onChange={handleOnChange} rows="8" value={text}></textarea>
         </div>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleUpCase}>Upper Case</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleLowCase}>Lower Case</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleSenCace}>Sentence Case</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleTitleCase}>Title Case</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleUndo}>Undo</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleCopy}>Copy Text</button>
-        <button type="button" className="btn btn-outline-primary mx-1" onClick={handleSave}>Save</button>
-        <button type="button" className="btn btn-outline-danger mx-1" onClick={handleClear}>Clear Text</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleUpCase}>Upper Case</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleLowCase}>Lower Case</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleSenCace}>Sentence Case</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleTitleCase}>Title Case</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleUndo}>Undo</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+        <button type="button" className="btn btn-outline-primary mx-1 my-1" onClick={handleSave}>Save</button>
+        <button type="button" className="btn btn-outline-danger mx-1 my-1" onClick={handleClear}>Clear Text</button>
     </div>
     <div className="container my-2">
       <h2>Text Summary</h2>
-      <p>{text ? text.trim().split(".").length : 0} Sentences</p>
-      <p>{text ? text.trim().split(/[ ]+/).length : 0} Words</p>
+      <p>{text ? text.split(".").filter((ele)=>{return ele.length!==0}).length : 0} Sentences</p>
+      <p>{text ? text.split(/[ ]+/).filter((ele)=>{return ele.length!==0}).length : 0} Words</p>
       <p>{text.length} Characters</p>
-      <p>{Math.round(0.008 * (text.trim().split(/[ ]+/).length))?Math.round(0.008 * (text.trim().split(/[ ]+/).length)):"Less then 1"} Minute(s) read</p>
+      <p>{Math.round(0.008 * (text.split(/[ ]+/).filter((ele)=>{return ele.length!==0}).length))?Math.round(0.008 * (text.split(/[ ]+/).filter((ele)=>{return ele.length!==0}).length)):"Less then 1"} Minute(s) read</p>
       <h3>Preview</h3>
       <pre><p>{text?text:"Enter something in the textbox above to preview it here"}</p></pre>
     </div>
