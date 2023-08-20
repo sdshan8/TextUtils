@@ -3,9 +3,14 @@
     visibility: hidden;
   }
   #print-area {
+    color: black;
     visibility: visible;
     position: absolute;
     left: 0;
     top: 0;
   }
+}
+
+pre {
+  white-space: break-spaces;
 }
